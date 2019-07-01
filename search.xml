@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title><![CDATA[聊聊 NexT 主题]]></title>
+    <url>%2F2019%2F06%2F26%2F%E6%97%A0%E5%86%85%E9%AC%BC%2F</url>
+    <content type="text"><![CDATA[NexT 主题 快满一周岁了，值此之际，碎碎念一下（没有干货）。正如我在 V2EX 分享 时的介绍一样，NexT 的前身叫做 Notes。在做 Notes 主题的时候，基于当时的需求出发点，从好听上来讲是简洁，不好听就是简陋（真直接，脸红）。 列表1 列表2a 这是一个子列表 b 这也是一个子列表 Notes 开发于我刚接触 Hexo 时。当时我拥有一个基于 WordPress 的独立博客，这个博客主要用来写比较完整的技术类文章。在拖延症与技术挫的主观加客观因素综合作用下，这个独立博客也是产出寥寥。然而在丑小鸭能变美丽天鹅的唯美段子的安利下，我也是每天勤勤恳恳钻研技术（折腾不休）。每日阅读各路教程，搜索各种解决方案，追根溯源探索背后的原理，企图从根本上回答 “我是谁？我从哪里来？我要到哪里去？” 这类哲学问题。 这是一个神奇的导航 123456&lt;html&gt; &lt;head&gt; &lt;title&gt;头部&lt;/title&gt; &lt;/head&gt; &lt;body&gt;&lt;/body&gt;&lt;/html&gt; 引用的效果]]></content>
+      <categories>
+        <category>前端</category>
+      </categories>
+      <tags>
+        <tag>导航</tag>
+        <tag>分享</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[学习前端]]></title>
+    <url>%2F2019%2F06%2F26%2F%E5%AD%A6%E4%B9%A0%E5%89%8D%E7%AB%AF%2F</url>
+    <content type="text"><![CDATA[#关于Html ##标题二 ###标题三 斜体加粗 无序列表 1.有序列表 引用]]></content>
+  </entry>
+  <entry>
+    <title><![CDATA[Tierney]]></title>
+    <url>%2F2019%2F06%2F25%2FTierney%2F</url>
+    <content type="text"></content>
+  </entry>
+  <entry>
+    <title><![CDATA[Hello World]]></title>
+    <url>%2F2019%2F06%2F25%2Fhello-world%2F</url>
+    <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
+  </entry>
+</search>
