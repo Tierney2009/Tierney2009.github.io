@@ -75,7 +75,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="导航,分享,">
 
 
 
@@ -88,17 +88,18 @@
 
 
 
-<meta name="description" content="#关于Html ##标题二 ###标题三 斜体加粗  无序列表  1.有序列表  引用">
+<meta name="description" content="JS函数预编译初步理解预编译 函数定义整体提升  变量声明提 预编译目的 ：将变量或函数提升到指定作用域中，当程序执行时，到预编译作用域中查找内容。     ##函数体内预编译四部曲  预编译发生在函数执行前一刻   创建AO对象(活动对象，也叫执行期上下文，可以理解为作用域或存储空间)  找形参和变量声明，进行参和变量名作为AO属性名，值为undefined  将实参和形参统一(实参带入AO对象">
+<meta name="keywords" content="导航,分享">
 <meta property="og:type" content="article">
 <meta property="og:title" content="学习前端">
 <meta property="og:url" content="http://Tierney.com/2019/06/26/学习前端/index.html">
 <meta property="og:site_name" content="Tierney">
-<meta property="og:description" content="#关于Html ##标题二 ###标题三 斜体加粗  无序列表  1.有序列表  引用">
+<meta property="og:description" content="JS函数预编译初步理解预编译 函数定义整体提升  变量声明提 预编译目的 ：将变量或函数提升到指定作用域中，当程序执行时，到预编译作用域中查找内容。     ##函数体内预编译四部曲  预编译发生在函数执行前一刻   创建AO对象(活动对象，也叫执行期上下文，可以理解为作用域或存储空间)  找形参和变量声明，进行参和变量名作为AO属性名，值为undefined  将实参和形参统一(实参带入AO对象">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-06-26T07:07:45.803Z">
+<meta property="og:updated_time" content="2019-07-02T00:50:44.361Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="学习前端">
-<meta name="twitter:description" content="#关于Html ##标题二 ###标题三 斜体加粗  无序列表  1.有序列表  引用">
+<meta name="twitter:description" content="JS函数预编译初步理解预编译 函数定义整体提升  变量声明提 预编译目的 ：将变量或函数提升到指定作用域中，当程序执行时，到预编译作用域中查找内容。     ##函数体内预编译四部曲  预编译发生在函数执行前一刻   创建AO对象(活动对象，也叫执行期上下文，可以理解为作用域或存储空间)  找形参和变量声明，进行参和变量名作为AO属性名，值为undefined  将实参和形参统一(实参带入AO对象">
 
 
 
@@ -108,7 +109,7 @@
     root: '/',
     scheme: 'Pisces',
     version: '5.1.4',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":true,"scrollpercent":true,"onmobile":false},
     fancybox: true,
     tabs: true,
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
@@ -146,10 +147,6 @@
 
 </head>
 
-
-   <canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;"></canvas>
-   <script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script>
-   <script type="text/javascript" src="/js/src/fireworks.js"></script>
 
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -341,6 +338,28 @@
           </span>
 
           
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/JS基础知识/" itemprop="url" rel="index">
+                    <span itemprop="name">JS基础知识</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -383,17 +402,32 @@
       
 
       
-        <p>#关于Html</p>
-<p>##标题二</p>
-<p>###标题三</p>
-<p><em>斜体</em><br><strong>加粗</strong></p>
+        <h1 id="JS函数预编译"><a href="#JS函数预编译" class="headerlink" title="JS函数预编译"></a>JS函数预编译</h1><h2 id="初步理解预编译"><a href="#初步理解预编译" class="headerlink" title="初步理解预编译"></a>初步理解预编译</h2><ol>
+<li><p>函数定义整体提升</p>
+</li>
+<li><p>变量声明提</p>
+<p>预编译目的 ：将变量或函数提升到指定作用域中，当程序执行时，到预编译作用域中查找内容。</p>
+</li>
+</ol>
+<hr>
+<p> ##函数体内预编译四部曲</p>
 <ul>
-<li>无序列表</li>
+<li>预编译发生在函数执行前一刻</li>
 </ul>
-<p>1.有序列表</p>
-<blockquote>
-<p>引用</p>
-</blockquote>
+<ol>
+<li><p>创建AO对象(活动对象，也叫执行期上下文，可以理解为作用域或存储空间)</p>
+</li>
+<li><p>找形参和变量声明，进行参和变量名作为AO属性名，值为undefined</p>
+</li>
+<li><p>将实参和形参统一(实参带入AO对象中的形参变量)</p>
+</li>
+<li><p>在函数体内找函数声明，将名做为AO属性名，值赋予函数体(提升子函数)</p>
+</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">function demo(a,b)&#123;</span><br><span class="line">console.log(a);</span><br><span class="line">console.log(b);</span><br><span class="line">var b=234;</span><br><span class="line">console.log(b);</span><br><span class="line"> .a=123;</span><br><span class="line">console.log(a);</span><br><span class="line">function a()&#123;&#125;;</span><br><span class="line">var a;</span><br><span class="line">b=234;</span><br><span class="line">var b=function ()&#123;&#125;;</span><br><span class="line">console.log(a);</span><br><span class="line">console.log(b)</span><br><span class="line">&#125;</span><br><span class="line">demo(1) </span><br><span class="line">//</span><br><span class="line">f a()&#123;&#125;</span><br><span class="line">undefined</span><br><span class="line">231</span><br><span class="line">123</span><br><span class="line">123</span><br><span class="line">f ()&#123;&#125;</span><br></pre></td></tr></table></figure>
+
+<p>可以从此图看出,先创建AO对象.在AO对象内部找形参和变量声明,a:undefined b:undefined实参和形参统一,a:1 b:undefined. 在函数体内找函数声明. a:function a(){} b:undefined最后依次负值输出,结果为上图控制台打印出为例.</p>
+<hr>
 
       
     </div>
@@ -432,6 +466,14 @@
     
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/导航/" rel="tag"><i class="fa fa-tag"></i> 导航</a>
+          
+            <a href="/tags/分享/" rel="tag"><i class="fa fa-tag"></i> 分享</a>
+          
+        </div>
       
 
       
@@ -517,8 +559,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -535,7 +586,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -546,7 +597,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-count">2</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -604,7 +655,30 @@
       </section>
 
       
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
 
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#JS函数预编译"><span class="nav-number">1.</span> <span class="nav-text">JS函数预编译</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#初步理解预编译"><span class="nav-number">1.1.</span> <span class="nav-text">初步理解预编译</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
       
 
     </div>
@@ -648,7 +722,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共411字</span>
+  <span class="post-count">博客全站共1.2k字</span>
 </div>
 
         
@@ -684,11 +758,6 @@
     </footer>
 
     
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-        
-      </div>
-    
 
     
 
@@ -718,6 +787,9 @@
 
 
 
+
+  
+  
 
 
 
@@ -751,6 +823,16 @@
   
   
     <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/three.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/canvas_sphere.min.js"></script>
   
 
 
@@ -1194,3 +1276,6 @@
   
 <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
 </html>
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/click.js"></script>
+

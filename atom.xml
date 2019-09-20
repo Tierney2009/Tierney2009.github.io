@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://Tierney.com/"/>
-  <updated>2019-07-01T07:43:50.721Z</updated>
+  <updated>2019-07-05T06:04:38.805Z</updated>
   <id>http://Tierney.com/</id>
   
   <author>
@@ -15,6 +15,57 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>JS原型与原型链</title>
+    <link href="http://Tierney.com/2019/07/05/JS%E5%8E%9F%E5%9E%8B%E4%B8%8E%E5%8E%9F%E5%9E%8B%E9%93%BE/"/>
+    <id>http://Tierney.com/2019/07/05/JS原型与原型链/</id>
+    <published>2019-07-05T05:49:43.000Z</published>
+    <updated>2019-07-05T06:04:38.805Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="JS原型"><a href="#JS原型" class="headerlink" title="JS原型"></a>JS原型</h1><h2 id="JS原型对象"><a href="#JS原型对象" class="headerlink" title="JS原型对象"></a>JS原型对象</h2><p>在 JavaScript 中，每当定义一个对象（函数也是对象）时候，对象中都会包含一些预定义的属性。其中每个函数对象都有一个prototype 属性，这个属性指向函数的原型对象。</p><a id="more"></a> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">function Person() &#123;&#125;</span><br><span class="line">Person.prototype.name = &apos;Zaxlct&apos;;</span><br><span class="line">Person.prototype.age  = 28;</span><br><span class="line">Person.prototype.job  = &apos;Software Engineer&apos;;</span><br><span class="line">Person.prototype.sayName = function() &#123;</span><br><span class="line">  alert(this.name);</span><br><span class="line">&#125;</span><br><span class="line">  </span><br><span class="line">var person1 = new Person();</span><br><span class="line">person1.sayName(); // &apos;Zaxlct&apos;</span><br><span class="line"></span><br><span class="line">var person2 = new Person();</span><br><span class="line">person2.sayName(); // &apos;Zaxlct&apos;</span><br><span class="line"></span><br><span class="line">console.log(person1.sayName == person2.sayName); //true</span><br></pre></td></tr></table></figure><p>我们得到了本文第一个「定律」：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">每个对象都有 __proto__ 属性，但只有函数对象才有 prototype 属性</span><br></pre></td></tr></table></figure><p>###那什么是原型对象呢？<br>   我们把上面的例子改一改你就会明白了：<br>   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Person.prototype = &#123;</span><br><span class="line">   name:  &apos;Zaxlct&apos;,</span><br><span class="line">   age: 28,</span><br><span class="line">   job: &apos;Software Engineer&apos;,</span><br><span class="line">   sayName: function() &#123;</span><br><span class="line">     alert(this.name);</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><p>   原型对象，顾名思义，它就是一个普通对象（废话 = =!）。从现在开始你要牢牢记住原型对象就是 Person.prototype ，如果你还是害怕它，那就把它想想成一个字母 A：<figure class="highlight plain"><figcaption><span>A </span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">---</span><br><span class="line">在上面我们给 A 添加了 四个属性：name、age、job、sayName。其实它还有一个默认的属性：```  constructor</span><br></pre></td></tr></table></figure></p><figure class="highlight plain"><figcaption><span>constructor（构造函数）属性，这个属性（是一个指针）指向 prototype 属性所在的函数（Person）```</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">上面这句话有点拗口，我们「翻译」一下：A 有一个默认的 constructor 属性，这个属性是一个指针，指向 Person。即：</span><br><span class="line">``` Person.prototype.constructor == Person</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;JS原型&quot;&gt;&lt;a href=&quot;#JS原型&quot; class=&quot;headerlink&quot; title=&quot;JS原型&quot;&gt;&lt;/a&gt;JS原型&lt;/h1&gt;&lt;h2 id=&quot;JS原型对象&quot;&gt;&lt;a href=&quot;#JS原型对象&quot; class=&quot;headerlink&quot; title=&quot;JS原型对象&quot;&gt;&lt;/a&gt;JS原型对象&lt;/h2&gt;&lt;p&gt;在 JavaScript 中，每当定义一个对象（函数也是对象）时候，对象中都会包含一些预定义的属性。其中每个函数对象都有一个prototype 属性，这个属性指向函数的原型对象。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="JS基础知识" scheme="http://Tierney.com/categories/JS%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"/>
+    
+    
+      <category term="导航" scheme="http://Tierney.com/tags/%E5%AF%BC%E8%88%AA/"/>
+    
+      <category term="分享" scheme="http://Tierney.com/tags/%E5%88%86%E4%BA%AB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>JS全局预编译</title>
+    <link href="http://Tierney.com/2019/07/05/JS%E5%85%A8%E5%B1%80%E9%A2%84%E7%BC%96%E8%AF%91/"/>
+    <id>http://Tierney.com/2019/07/05/JS全局预编译/</id>
+    <published>2019-07-05T05:36:59.000Z</published>
+    <updated>2019-07-05T05:47:43.081Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="JS函数预编译"><a href="#JS函数预编译" class="headerlink" title="JS函数预编译"></a>JS函数预编译</h1><p>与函数体内预编译类似,不同点为全局预编译创建GO对象,在GO内部进行变量赋值.全局预编译内部若AO对象寻找不到未出现变量名,则会在全局内部部进行寻找.也就是说,预编译的方向是由里向外的.举个简单的例子</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">a = 1</span><br><span class="line">function fn()&#123;</span><br><span class="line">    console.log(a)</span><br><span class="line">    //a:1</span><br><span class="line">&#125; </span><br><span class="line">fn()</span><br></pre></td></tr></table></figure><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">a=1</span><br><span class="line">function fn()&#123;</span><br><span class="line">    var a;</span><br><span class="line">    console.log(a)</span><br><span class="line">    //a:undefined</span><br><span class="line">&#125;</span><br><span class="line">fn()</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;JS函数预编译&quot;&gt;&lt;a href=&quot;#JS函数预编译&quot; class=&quot;headerlink&quot; title=&quot;JS函数预编译&quot;&gt;&lt;/a&gt;JS函数预编译&lt;/h1&gt;&lt;p&gt;与函数体内预编译类似,不同点为全局预编译创建GO对象,在GO内部进行变量赋值.全局预编译内部若AO对
+      
+    
+    </summary>
+    
+      <category term="JS基础知识" scheme="http://Tierney.com/categories/JS%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"/>
+    
+    
+      <category term="导航" scheme="http://Tierney.com/tags/%E5%AF%BC%E8%88%AA/"/>
+    
+      <category term="分享" scheme="http://Tierney.com/tags/%E5%88%86%E4%BA%AB/"/>
+    
+  </entry>
   
   <entry>
     <title>聊聊 NexT 主题</title>
@@ -45,28 +96,25 @@
     <link href="http://Tierney.com/2019/06/26/%E5%AD%A6%E4%B9%A0%E5%89%8D%E7%AB%AF/"/>
     <id>http://Tierney.com/2019/06/26/学习前端/</id>
     <published>2019-06-26T06:54:54.000Z</published>
-    <updated>2019-06-26T07:07:45.803Z</updated>
+    <updated>2019-07-02T00:50:44.361Z</updated>
     
-    <content type="html"><![CDATA[<p>#关于Html</p><p>##标题二</p><p>###标题三</p><p><em>斜体</em><br><strong>加粗</strong></p><ul><li>无序列表</li></ul><p>1.有序列表</p><blockquote><p>引用</p></blockquote>]]></content>
+    <content type="html"><![CDATA[<h1 id="JS函数预编译"><a href="#JS函数预编译" class="headerlink" title="JS函数预编译"></a>JS函数预编译</h1><h2 id="初步理解预编译"><a href="#初步理解预编译" class="headerlink" title="初步理解预编译"></a>初步理解预编译</h2><ol><li><p>函数定义整体提升</p></li><li><p>变量声明提</p><p>预编译目的 ：将变量或函数提升到指定作用域中，当程序执行时，到预编译作用域中查找内容。</p></li></ol><hr><p> ##函数体内预编译四部曲</p><ul><li>预编译发生在函数执行前一刻</li></ul><ol><li><p>创建AO对象(活动对象，也叫执行期上下文，可以理解为作用域或存储空间)</p></li><li><p>找形参和变量声明，进行参和变量名作为AO属性名，值为undefined</p></li><li><p>将实参和形参统一(实参带入AO对象中的形参变量)</p></li><li><p>在函数体内找函数声明，将名做为AO属性名，值赋予函数体(提升子函数)</p></li></ol><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">function demo(a,b)&#123;</span><br><span class="line">console.log(a);</span><br><span class="line">console.log(b);</span><br><span class="line">var b=234;</span><br><span class="line">console.log(b);</span><br><span class="line"> .a=123;</span><br><span class="line">console.log(a);</span><br><span class="line">function a()&#123;&#125;;</span><br><span class="line">var a;</span><br><span class="line">b=234;</span><br><span class="line">var b=function ()&#123;&#125;;</span><br><span class="line">console.log(a);</span><br><span class="line">console.log(b)</span><br><span class="line">&#125;</span><br><span class="line">demo(1) </span><br><span class="line">//</span><br><span class="line">f a()&#123;&#125;</span><br><span class="line">undefined</span><br><span class="line">231</span><br><span class="line">123</span><br><span class="line">123</span><br><span class="line">f ()&#123;&#125;</span><br></pre></td></tr></table></figure><p>可以从此图看出,先创建AO对象.在AO对象内部找形参和变量声明,a:undefined b:undefined实参和形参统一,a:1 b:undefined. 在函数体内找函数声明. a:function a(){} b:undefined最后依次负值输出,结果为上图控制台打印出为例.</p><hr>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;p&gt;#关于Html&lt;/p&gt;
-&lt;p&gt;##标题二&lt;/p&gt;
-&lt;p&gt;###标题三&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;斜体&lt;/em&gt;&lt;br&gt;&lt;strong&gt;加粗&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;无序列表&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;1.有序列表&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;引
+        &lt;h1 id=&quot;JS函数预编译&quot;&gt;&lt;a href=&quot;#JS函数预编译&quot; class=&quot;headerlink&quot; title=&quot;JS函数预编译&quot;&gt;&lt;/a&gt;JS函数预编译&lt;/h1&gt;&lt;h2 id=&quot;初步理解预编译&quot;&gt;&lt;a href=&quot;#初步理解预编译&quot; class=&quot;headerlink
       
     
     </summary>
     
+      <category term="JS基础知识" scheme="http://Tierney.com/categories/JS%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"/>
+    
+    
+      <category term="导航" scheme="http://Tierney.com/tags/%E5%AF%BC%E8%88%AA/"/>
+    
+      <category term="分享" scheme="http://Tierney.com/tags/%E5%88%86%E4%BA%AB/"/>
     
   </entry>
   
